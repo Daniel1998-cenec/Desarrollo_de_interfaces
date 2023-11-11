@@ -1,8 +1,10 @@
 package paquetePrincipal;
 
 import java.awt.EventQueue;
+import java.awt.FlowLayout;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
@@ -37,45 +39,35 @@ public class VentanasJFrame extends JFrame {
 	 */
 	public VentanasJFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        setBounds(500, 500, 500, 500);
 
-		setContentPane(contentPane);
-		GridBagLayout gbl_contentPane = new GridBagLayout();
-		gbl_contentPane.columnWidths = new int[]{79, 89, 89, 89, 0};
-		gbl_contentPane.rowHeights = new int[]{23, 0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_contentPane.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		contentPane.setLayout(gbl_contentPane);
-		
-		JButton boton3 = new JButton("boton 3");
-		boton3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		GridBagConstraints gbc_boton3 = new GridBagConstraints();
-		gbc_boton3.anchor = GridBagConstraints.NORTHWEST;
-		gbc_boton3.insets = new Insets(0, 0, 5, 5);
-		gbc_boton3.gridx = 1;
-		gbc_boton3.gridy = 3;
-		contentPane.add(boton3, gbc_boton3);
-		
-		JButton boton2 = new JButton("boton 2");
-		GridBagConstraints gbc_boton2 = new GridBagConstraints();
-		gbc_boton2.anchor = GridBagConstraints.NORTHWEST;
-		gbc_boton2.insets = new Insets(0, 0, 5, 5);
-		gbc_boton2.gridx = 2;
-		gbc_boton2.gridy = 3;
-		contentPane.add(boton2, gbc_boton2);
-		
-		JButton boton1 = new JButton("boton");
-		GridBagConstraints gbc_boton1 = new GridBagConstraints();
-		gbc_boton1.insets = new Insets(0, 0, 5, 0);
-		gbc_boton1.anchor = GridBagConstraints.NORTHWEST;
-		gbc_boton1.gridx = 3;
-		gbc_boton1.gridy = 3;
-		contentPane.add(boton1, gbc_boton1);
+        contentPane = new JPanel();
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        setContentPane(contentPane);
+
+        // Utilizamos un FlowLayout en lugar de null
+        contentPane.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+
+        JButton boton = new JButton("Boton 1");
+        boton.setBounds(5, 5, 100, 100);
+        contentPane.add(boton);
+
+        JLabel label = new JLabel("");
+        label.setBounds(5, 89, 213, 84);
+        contentPane.add(label);
+
+        JLabel label_1 = new JLabel("");
+        label_1.setBounds(5, 89, 213, 84);
+        contentPane.add(label_1);
+
+        // Corregir la configuración de los botones
+        JButton boton2 = new JButton("Boton 2");
+        boton2.setBounds(5, 5, 100, 100);
+        contentPane.add(boton2);
+
+        JButton boton3 = new JButton("Boton 3");
+        boton3.setBounds(5, 5, 100, 100);
+        contentPane.add(boton3);
 	}
 
 }

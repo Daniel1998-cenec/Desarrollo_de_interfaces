@@ -23,6 +23,7 @@ public class Ventana2 {
 			public void actionPerformed (ActionEvent e) {
 				//JOptionPane panel=new JOptionPane();
 				String nombre= JOptionPane.showInputDialog(ventana, "Dime tu nombre", "Datos personales", JOptionPane.QUESTION_MESSAGE);
+				JOptionPane.showMessageDialog(ventana, "Mi nombre es "+nombre,"Nota informativa",JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		ventana.setVisible(true);

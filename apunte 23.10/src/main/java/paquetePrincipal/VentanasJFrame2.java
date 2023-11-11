@@ -57,6 +57,7 @@ public class VentanasJFrame2 extends JFrame {
 		
 		JButton boton1 = new JButton("boton");
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()

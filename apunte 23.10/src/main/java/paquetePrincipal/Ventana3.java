@@ -26,6 +26,7 @@ public class Ventana3 {
 				// JOptionPane panel=new JOptionPane();
 				String nombre = JOptionPane.showInputDialog(ventana, "Dime tu pokemon favorito", "Datos personales",
 						JOptionPane.QUESTION_MESSAGE);
+				JOptionPane.showMessageDialog(ventana, "Tu apellido es "+nombre, "Nota informativo",JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		ventana.setVisible(true);
