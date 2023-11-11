@@ -8,22 +8,23 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-public class Ventana2 {
+public class Ventana2_1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		JFrame ventana=new JFrame("Mi primera ventana");
-		ventana.setSize(400,200);
+		final JFrame ventana=new JFrame("Mi segunda ventana");
+		ventana.setSize(700,350);
 		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		JButton boton=new JButton("Haz click aquí");
+		JButton boton=new JButton("Dale un clikekaso aquí");
 		ventana.add(boton);
 		
 		boton.addActionListener(new ActionListener () {
 			public void actionPerformed (ActionEvent e) {
 				//JOptionPane panel=new JOptionPane();
-				String nombre= JOptionPane.showInputDialog(ventana, "Dime tu nombre", "Datos personales", JOptionPane.QUESTION_MESSAGE);
-			}
+				String nombre= JOptionPane.showInputDialog(ventana, "Dime tu pokemon favorito", "Datos personales", JOptionPane.QUESTION_MESSAGE);
+				JOptionPane.showMessageDialog(ventana, "interesante");
+				}
 		});
 		ventana.setVisible(true);
 	}

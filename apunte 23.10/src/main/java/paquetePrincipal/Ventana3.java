@@ -14,7 +14,7 @@ public class Ventana3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		JFrame ventana = new JFrame("Mi segunda ventana");
+		final JFrame ventana = new JFrame("Mi segunda ventana");
 		JButton boton = new JButton("Dale un clikekaso aquí");
 		ventana.setSize(300, 300);
 		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -11,9 +11,7 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.ColumnSpec;
-import com.jgoodies.forms.layout.RowSpec;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
