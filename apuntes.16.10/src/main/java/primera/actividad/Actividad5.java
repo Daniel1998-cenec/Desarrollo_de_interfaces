@@ -3,69 +3,64 @@ package primera.actividad;
 import javax.swing.JOptionPane;
 
 public class Actividad5 {
+
 	public static void main(String[] args) {
-		JOptionPane.showMessageDialog(null, "Bienvenido jugador");
-		boolean juegoTerminado = false;
+		String nombre = "";
+		int respuesta;
+		String respuestaNumero="";
+		int respuestaCuestionario;
 
-		while (!juegoTerminado) {
-			int opcion = JOptionPane.showConfirmDialog(null, "¿Te quieres registrar?", "Continuar",
-					JOptionPane.YES_NO_OPTION);
+		do {
+			respuesta = JOptionPane.showConfirmDialog(null, "¿Te quieres registrar?", "Nota informativa",
+					JOptionPane.INFORMATION_MESSAGE);
 
-			if (opcion == JOptionPane.YES_OPTION) {
+			if (respuesta == JOptionPane.YES_OPTION) {
+				JOptionPane.showMessageDialog(null, "Perfecto", "Nota informativa", JOptionPane.INFORMATION_MESSAGE);
 
-				String nombre = JOptionPane.showInputDialog(null, "Dime como te llamas");
+				nombre = JOptionPane.showInputDialog(null, "Dime un nombre", "Cuestionario",
+						JOptionPane.INFORMATION_MESSAGE);
 
-				if (nombre != null) {
-					if (!nombre.isEmpty()) {
-						String edad;
-						boolean soloNumero = false;
-
-						do {
-							edad = JOptionPane.showInputDialog(null, "Dime qué edad tienes");
-
-							if (edad != null) {
-								if (!edad.isEmpty()) {
-									try {
-										// Intenta convertir la entrada en un número
-										int edadNum = Integer.parseInt(edad);
-
-										// Si se convierte correctamente, marca la entrada como válida
-										soloNumero = true;
-
-										JOptionPane.showMessageDialog(null,
-												"Felicidades, tu nombre es, " + nombre + ", y tu edad es, " + edad);
-										JOptionPane.showMessageDialog(null, "Te has registrado con éxito");
-										juegoTerminado = true;
-
-									} catch (NumberFormatException e) {
-										// La entrada no es un número válido
-										JOptionPane.showMessageDialog(null,
-												"Debes ingresar un número válido para la edad.");
-									}
-								} else {
-									JOptionPane.showMessageDialog(null, "La edad no puede estar vacía");
-								}
-							} else {
-								JOptionPane.showMessageDialog(null, "Has cancelado el registro :(");
-								juegoTerminado = true;
-								break;
-							}
-
-						} while (!soloNumero); // Repite el bucle hasta que se proporcione una entrada válida
-					} else {
-						JOptionPane.showMessageDialog(null, "El nombre no puede estar vacío");
-					}
+				if (nombre == null) {
+					JOptionPane.showMessageDialog(null, "Le has dado a cancelar", "Nota informativa",
+							JOptionPane.INFORMATION_MESSAGE);
+					return;
+				} else if (nombre.isEmpty()) {
+					JOptionPane.showMessageDialog(null, "No puede ir el nombre vacío :(", "Nota informativa",
+							JOptionPane.INFORMATION_MESSAGE);
 				} else {
-					JOptionPane.showMessageDialog(null, "Has cancelado el registro :(");
-					juegoTerminado = true;
+					JOptionPane.showMessageDialog(null, "Bienvenido jugador, " + nombre, "Mensaje informativo",
+							JOptionPane.INFORMATION_MESSAGE);
+					respuestaNumero=JOptionPane.showInputDialog(null, "Dime tu edad","Cuestionario",JOptionPane.INFORMATION_MESSAGE);
+					
+					if(respuestaNumero==null) {
+						JOptionPane.showMessageDialog(null, "Le has dado a cancelar", "Nota informativa",
+								JOptionPane.INFORMATION_MESSAGE);
+						return;
+					}else if(respuestaNumero.isEmpty()) {
+						JOptionPane.showMessageDialog(null, "No puede ir el tu edad vacío :(", "Nota informativa",
+								JOptionPane.INFORMATION_MESSAGE);
+					} else {
+						respuestaCuestionario=JOptionPane.showConfirmDialog(null,"¿Tu nombre es "+nombre+" y tu edad son "+respuestaNumero+" años?","Nota informativa", JOptionPane.ERROR_MESSAGE);
+						
+						if(respuestaCuestionario==JOptionPane.YES_OPTION) {
+							JOptionPane.showMessageDialog(null, "Felicidades has completado el registro", "logeado con exito", JOptionPane.INFORMATION_MESSAGE);
+						} else {
+							JOptionPane.showMessageDialog(null, "Vaya has introducido mal tus datos personales", "No has podido logearte", JOptionPane.INFORMATION_MESSAGE);
+						}
+					}
 				}
 
+			} else if (respuesta == JOptionPane.NO_OPTION) {
+				JOptionPane.showMessageDialog(null, "vaya :C", "Nota informativa", JOptionPane.INFORMATION_MESSAGE);
+				return;
 			} else {
-				JOptionPane.showMessageDialog(null, "No te has querido registrar :(");
-				juegoTerminado = true;
+				JOptionPane.showMessageDialog(null, "Has salido del registro", "Nota informativa",
+						JOptionPane.INFORMATION_MESSAGE);
+				return;
 			}
-		}
-	}
-}
 
-//Sin terminar.
+		} while (nombre.isEmpty() || respuestaNumero.isEmpty());
+
+	}
+
+}
