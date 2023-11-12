@@ -20,7 +20,7 @@ public class EjercicioComponentUI extends JFrame{
 		
 		JButton button= new JButton("Botón Personalizado");
 		button.setBackground(Color.cyan);
-		button.setForeground(Color.red);
+		button.setForeground(Color.ORANGE);
 		
 		//Establecer el tamaño y la ubi del botón
 		

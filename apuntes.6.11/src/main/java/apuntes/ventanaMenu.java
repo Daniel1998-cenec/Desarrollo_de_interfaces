@@ -6,10 +6,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ventanaMenu extends JFrame implements ActionListener {
+	
     private JMenuBar mb;
     private JMenu menu1;
     private JMenuItem mi1, mi2, mi3;
 
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            ventanaMenu formulario1 = new ventanaMenu();
+            formulario1.setBounds(10, 20, 300, 200);
+            formulario1.setVisible(true);
+        });
+    }
+    
     public ventanaMenu() {
         setTitle("Ejemplo de Menú con JFrame");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -46,11 +55,5 @@ public class ventanaMenu extends JFrame implements ActionListener {
         }
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            ventanaMenu formulario1 = new ventanaMenu();
-            formulario1.setBounds(10, 20, 300, 200);
-            formulario1.setVisible(true);
-        });
-    }
+   
 }
