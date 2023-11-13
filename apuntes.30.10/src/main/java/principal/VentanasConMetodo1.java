@@ -33,7 +33,7 @@ public class VentanasConMetodo1 extends JFrame {
         setVisible(true);
         panel = new JPanel();
         panel.setLayout(null);
-        getContentPane().add(panel);
+        //getContentPane().add(panel);
     }
 
     private void agregarBoton(final String nombreBoton, int x, int y) {

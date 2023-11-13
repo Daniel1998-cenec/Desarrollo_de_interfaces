@@ -46,7 +46,7 @@ public class VentanasJFrame extends JFrame {
         setContentPane(contentPane);
 
         // Utilizamos un FlowLayout en lugar de null
-        contentPane.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+        contentPane.setLayout(new FlowLayout(FlowLayout.TRAILING, 5, 5));
 
         JButton boton = new JButton("Boton 1");
         boton.setBounds(5, 5, 100, 100);
