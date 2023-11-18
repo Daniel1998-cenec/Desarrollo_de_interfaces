@@ -14,7 +14,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class VentanaPrincipal extends JFrame {
+public class VentanaPrincipal extends JFrame implements ActionListener {
 
 	JPanel panelNorte = new JPanel();
 	JPanel panelSur = new JPanel();
@@ -40,6 +40,14 @@ public class VentanaPrincipal extends JFrame {
 			y = y + 50;
 		}
 		
+		for (byte i = 4; i < 7; i++) {
+			// frame.agregarBotonesNorte("Boton " + i, 50, y);
+			frame.agregarBotonesNorte("Boton " + i, 50, y);
+
+			// frame.agregarBotonesSur("Boton " + i, 50, y);
+			y = y + 50;
+		}
+		
 		for (byte i = 1; i < 7; i++) {
 			frame.creacionMenu("Boton " + i, 50, y);
 			y = y + 50;
@@ -54,8 +62,8 @@ public class VentanaPrincipal extends JFrame {
 		getContentPane().setLayout(new FlowLayout(FlowLayout.CENTER, 300, 300));
 
 		setLayout(new BorderLayout());
-		add(panelNorte);
-		add(panelSur);
+		add(panelNorte, BorderLayout.SOUTH);
+		add(panelSur, BorderLayout.NORTH);
 
 		setVisible(true);
 	}
@@ -91,13 +99,20 @@ public class VentanaPrincipal extends JFrame {
 	}
 
 	// Creacion menu
+	
 	private void creacionMenu(String nombre, int x, int y) {
 		
 		setJMenuBar(menuBar);
 		menuBar.add(menu);
 		boton1 = new JMenuItem(nombre);
+		boton1.addActionListener(this);
 		menu.add(boton1);
 		setVisible(true);
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
