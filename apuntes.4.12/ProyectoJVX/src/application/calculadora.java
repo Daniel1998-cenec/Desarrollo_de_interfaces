@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 public class calculadora extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Calculadora.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("simulacro.fxml"));
         Parent root = loader.load();
 
 
