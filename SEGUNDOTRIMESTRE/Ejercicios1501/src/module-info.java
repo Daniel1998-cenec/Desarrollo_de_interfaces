@@ -10,4 +10,6 @@ module Ejercicios {
 	opens ejercicio5 to javafx.graphics, javafx.fxml;
 	opens ejercicio6 to javafx.graphics, javafx.controls, javafx.fxml;
 	opens ejercicio7 to javafx.graphics, javafx.controls, javafx.fxml;
+	opens ejercicio9 to javafx.graphics, javafx.controls, javafx.fxml;
+	opens ejercicio10 to javafx.graphics, javafx.controls, javafx.fxml;
 }

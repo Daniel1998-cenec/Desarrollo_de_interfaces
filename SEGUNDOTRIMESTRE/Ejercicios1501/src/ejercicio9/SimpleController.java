@@ -1,4 +1,4 @@
-package ej9;
+package ejercicio9;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
