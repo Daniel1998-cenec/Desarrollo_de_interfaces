@@ -1,0 +1,20 @@
+/* Estilo para el GridPane */
+#gridPane {
+    -fx-background-color: black;
+}
+
+/* Estilo para los botones */
+.button {
+    -fx-background-color: red;
+    -fx-text-fill: black;
+}
+
+/* Estilo para las etiquetas */
+.label {
+    -fx-text-fill: black;
+}
+
+/* Estilo para las etiquetas */
+.label {
+    -fx-text-fill: white;
+}

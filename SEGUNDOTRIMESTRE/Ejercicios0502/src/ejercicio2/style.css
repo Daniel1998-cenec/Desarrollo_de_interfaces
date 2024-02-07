@@ -1,0 +1,23 @@
+VBox {
+    -fx-background-color: #000; /* Fondo negro */
+    -fx-border-color: #ccc; /* Color del borde */
+    -fx-border-width: 1; /* Ancho del borde */
+}
+
+/* Estilos para los elementos dentro del VBox */
+Label {
+    -fx-font-size: 14px; /* Tamaño de la fuente */
+    -fx-text-fill: #ffffff; /* Blanco */
+}
+
+TextField, PasswordField {
+    -fx-font-size: 20px; /* Tamaño de la fuente */
+    -fx-pref-width: 200px; /* Ancho preferido */
+    -fx-background-color: #01ff70; /* Verde */
+}
+
+Button {
+    -fx-font-size: 14px; /* Tamaño de la fuente */
+    -fx-background-color: #ff4136; /* Rojo */
+    -fx-text-fill: white; /* Color del texto del botón */
+}

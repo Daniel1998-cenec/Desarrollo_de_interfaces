@@ -1,0 +1,20 @@
+/* Estilo para el VBox principal */
+VBox {
+    -fx-background-color: #008000; /* Fondo verde */
+}
+
+/* Estilo para el TextField */
+TextField {
+    -fx-control-inner-background: #000000; /* Fondo negro */
+    -fx-text-fill: #FFFFFF; /* Color del texto blanco */
+    -fx-font-size: 18;
+}
+
+/* Estilo para los botones numéricos y de operadores */
+
+Button {
+    -fx-background-color: #FF0000; /* Fondo rojo */
+    -fx-font-size: 14;
+    -fx-background-radius: 25;
+    
+}
