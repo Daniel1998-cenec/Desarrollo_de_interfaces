@@ -15,11 +15,11 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
        
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Ejercicio5.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Ejercicio5Avanzado.fxml"));
         Parent root = loader.load();
 
         primaryStage.setTitle("Mi Aplicación JavaFX");
-        primaryStage.setScene(new Scene(root, 900, 300));
+        primaryStage.setScene(new Scene(root, 900, 400));
         primaryStage.show();
 
         // Mueve la lógica de la base de datos al controlador

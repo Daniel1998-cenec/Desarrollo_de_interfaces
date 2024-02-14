@@ -1,9 +1,15 @@
 package Ejercicio5Avanzado;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import Ejercicio4Avanzado.Alumno;
 
 public class LibroModel {
 	
@@ -48,6 +54,27 @@ public class LibroModel {
             }
         }
     }
+	
+	public List<Libro> getAllLibro() throws SQLException {
+		List<Libro> libro = new ArrayList<>();
+		PreparedStatement stmt = conn.prepareStatement("SELECT * FROM libros");
+
+		ResultSet rs = stmt.executeQuery();
+
+		while (rs.next()) {
+			int id = rs.getInt("id");
+			String titulo = rs.getString("titulo");
+			String editorial = rs.getString("editorial");
+			String autor = rs.getString("autor");
+			int paginas = rs.getInt("paginas");
+			
+			libro.add(new Libro(titulo, editorial, autor, paginas));
+		}
+		stmt.close();
+		rs.close();
+		return libro;
+	}
+	
 }
 	
 

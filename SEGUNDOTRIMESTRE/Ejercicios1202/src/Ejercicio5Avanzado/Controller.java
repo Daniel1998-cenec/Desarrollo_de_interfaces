@@ -9,6 +9,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import java.sql.SQLException;
 import java.util.List;
 
+import Ejercicio4Avanzado.Alumno;
+
 
 
 public class Controller {
@@ -20,7 +22,7 @@ public class Controller {
     @FXML
     private TableColumn<Libro, String> tituloColumn;
 
-
+    
     @FXML
     private TableColumn<Libro, String> editorialColumn;
 
@@ -61,12 +63,16 @@ public class Controller {
         // Configura el botón de agregar juego
         btnAgregarLibro.setOnAction(event -> agregarLibro());
 
-
+     // Configura las columnas de la TableView utiliza instrucciones tipo lambda, cada columna de la tabla le //corresponde un campo de la base de datos
+        tituloColumn.setCellValueFactory(cellData -> cellData.getValue().tituloProperty());
+        editorialColumn.setCellValueFactory(cellData -> cellData.getValue().editorialProperty());
+        autorColumn.setCellValueFactory(cellData -> cellData.getValue().AutorProperty());
+        paginasColumn.setCellValueFactory(cellData -> cellData.getValue().paginasProperty().asObject());
+        
         // Configura los desplegables
         cargarEditoriales();
-
-
-        // Al inicializar el controlador, carga los juegos desde la base de datos
+        
+        mostrarLibro();
         
     }
 
@@ -80,6 +86,17 @@ public class Controller {
 
         // Configura el ComboBox con las compañías
         cmbEditorial.setItems(FXCollections.observableArrayList(editoriales));
+    }
+    
+    private void mostrarLibro() throws SQLException {
+        // Limpiar la TableView antes de cargar nuevos datos
+    	tableViewLibro.getItems().clear();
+
+
+        List<Libro> libro = model.getAllLibro();
+    
+        // Agrega los datos a la TableView
+        tableViewLibro.getItems().addAll(libro);
     }
 
 

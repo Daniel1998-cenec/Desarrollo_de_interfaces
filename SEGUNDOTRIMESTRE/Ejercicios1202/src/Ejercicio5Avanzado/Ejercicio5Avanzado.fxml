@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ejercicio5Avanzado.Controller">
+   <items>
+      <AnchorPane prefHeight="398.0" prefWidth="195.0">
+         <children>
+            <Button fx:id="btnAgregarLibro" layoutX="63.0" layoutY="336.0" mnemonicParsing="false" onAction="#agregarLibro" text="Añadir" />
+            <Button layoutX="178.0" layoutY="336.0" mnemonicParsing="false" onAction="#borrarRegistro" text="Borrar" textFill="WHITE" />
+            <ChoiceBox fx:id="cmbEditorial" layoutX="101.0" layoutY="126.0" prefWidth="150.0" />
+            <Label layoutX="116.0" layoutY="35.0" text="Nuevo libro" />
+            <Label layoutX="26.0" layoutY="83.0" text="Título" />
+            <Label layoutX="19.0" layoutY="130.0" text="Editorial" />
+            <Label layoutX="26.0" layoutY="182.0" text="Autor" />
+            <Label layoutX="19.0" layoutY="230.0" text="Nº páginas" />
+            <TextField fx:id="tituloTextField" layoutX="102.0" layoutY="79.0" promptText="tituloTextField" />
+            <TextField fx:id="autorTextField" layoutX="101.0" layoutY="178.0" />
+            <TextField fx:id="paginasTextField" layoutX="101.0" layoutY="226.0" />
+            <Button fx:id="btnLimpiarCampos" layoutX="122.0" layoutY="336.0" mnemonicParsing="false" onAction="#limpiarCampos" text="Limpiar campos" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="422.0" prefWidth="354.0">
+         <children>
+            <TableView fx:id="tableViewLibro" layoutX="-1.0" layoutY="48.0" prefHeight="350.0" prefWidth="298.0">
+              <columns>
+                <TableColumn fx:id="tituloColumn" prefWidth="75.0" text="Título" />
+                <TableColumn fx:id="editorialColumn" prefWidth="75.0" text="Editorial" />
+                  <TableColumn fx:id="autorColumn" prefWidth="75.0" text="Autor" />
+                  <TableColumn fx:id="paginasColumn" prefWidth="75.0" text="Páginas" />
+              </columns>
+            </TableView>
+            <Label layoutX="105.0" layoutY="21.0" text="Listado de libros" />
+         </children>
+      </AnchorPane>
+   </items>
+</SplitPane>
