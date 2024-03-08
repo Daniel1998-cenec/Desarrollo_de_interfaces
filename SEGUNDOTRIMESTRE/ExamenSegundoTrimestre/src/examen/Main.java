@@ -1,31 +1,35 @@
-package Ejercicio5Avanzado;
-/* en este ejercicio hemos unificado el controlador en uno solo*/
+package examen;
+
+import java.sql.SQLException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.sql.SQLException;
-
 public class Main extends Application {
 
-   
+	   
 
     @Override
     public void start(Stage primaryStage) throws Exception {
        
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Ejercicio5Avanzado.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Estudiante.fxml"));
         Parent root = loader.load();
+        
+        Scene scene= new Scene(root,900,500);
+        String estilocss=getClass().getResource("Estilo.css").toExternalForm();
+        scene.getStylesheets().add(estilocss);
 
         primaryStage.setTitle("Mi Aplicación JavaFX");
-        primaryStage.setScene(new Scene(root, 900, 400));
+        primaryStage.setScene(scene);
         primaryStage.show();
 
         // Mueve la lógica de la base de datos al controlador
-        String dbURL = "jdbc:mysql://localhost/Biblioteca";
+        String dbURL = "jdbc:mysql://localhost/Universidad";
         String dbUser = "root";
         String dbPassword = "";
+        
 
         try {
             Controller controller = loader.getController();
@@ -38,3 +42,4 @@ public class Main extends Application {
         launch(args);
     }
 }
+

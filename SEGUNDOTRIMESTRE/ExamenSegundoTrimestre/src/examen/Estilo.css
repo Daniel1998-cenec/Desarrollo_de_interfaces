@@ -1,0 +1,5 @@
+/* Estilo para los botones */
+.button {
+    -fx-background-color: blue;
+    -fx-text-fill: white;
+}

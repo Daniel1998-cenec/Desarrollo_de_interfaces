@@ -1,5 +1,5 @@
-package Ejercicio5Avanzado;
-/* en este ejercicio hemos unificado el controlador en uno solo*/
+package pruebacasa;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,7 +15,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
        
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Ejercicio5Avanzado.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("videojuegos.fxml"));
         Parent root = loader.load();
 
         primaryStage.setTitle("Mi Aplicación JavaFX");
@@ -23,7 +23,7 @@ public class Main extends Application {
         primaryStage.show();
 
         // Mueve la lógica de la base de datos al controlador
-        String dbURL = "jdbc:mysql://localhost/Biblioteca";
+        String dbURL = "jdbc:mysql://localhost/videojuegos";
         String dbUser = "root";
         String dbPassword = "";
 

@@ -10,8 +10,7 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
-import Ejercicio2.Tienda;
-import Ejercicio2.TiendaModel;
+;
 
 
 public class Controller {
